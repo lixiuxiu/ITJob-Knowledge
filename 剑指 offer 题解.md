@@ -1886,7 +1886,7 @@ private int partition(int[] nums, int l, int h) {
     int p = nums[l];     /* 切分元素 */
     int i = l, j = h + 1;
     while (true) {
-        while (i != h && nums[++i] < p) ;
+        while (i != h && nums[++i] < p) ; //这里注意i！=h而不是i!=j,他判断的是不到数组尾部
         while (j != l && nums[--j] > p) ;
         if (i >= j)
             break;
@@ -1902,6 +1902,32 @@ private void swap(int[] nums, int i, int j) {
     nums[j] = t;
 }
 ```
+
+基于partiton部分的思想，反转一个字符串里的元音字母
+
+```java
+private final static HashSet<Character> vowels = new HashSet<>(Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'));
+    public String reverseVowels(String s) {
+        if(s==null || s.length()==0) return "";
+        char[] ch=s.toCharArray();
+        int l=-1,h=ch.length;
+        char temp=0;
+        while(true){
+            while(l<ch.length-1 && !vowels.contains(ch[++l]));
+            while(0<h && !vowels.contains(ch[--h]));
+            if(l>=h) break;
+            temp=ch[l];
+            ch[l]=ch[h];
+            ch[h]=temp;
+        }
+                  
+        return new String(ch);
+    }
+```
+
+
+
+
 
 ### 大小为 K 的最小堆
 

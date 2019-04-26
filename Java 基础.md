@@ -1,5 +1,5 @@
 * [点击阅读面试进阶指南 ](https://github.com/CyC2018/Backend-Interview-Guide)
-<!-- GFM-TOC -->
+  <!-- GFM-TOC -->
 * [一、数据类型](#一数据类型)
     * [基本类型](#基本类型)
     * [包装类型](#包装类型)
@@ -38,7 +38,7 @@
     * [Java 与 C++ 的区别](#java-与-c-的区别)
     * [JRE or JDK](#jre-or-jdk)
 * [参考资料](#参考资料)
-<!-- GFM-TOC -->
+  <!-- GFM-TOC -->
 
 
 # 一、数据类型
@@ -1390,6 +1390,26 @@ Java 注解是附加在代码中的一些元信息，用于一些工具在编译
 
 - JRE is the JVM program, Java application need to run on JRE.
 - JDK is a superset of JRE, JRE + tools for developing java programs. e.g, it provides the compiler "javac"
+
+
+
+# 多态
+
+多态一般分为两种：重写式多态和重载式多态。
+
+- **重载式多态**，也叫编译时多态。也就是说这种多态再编译时已经确定好了。重载大家都知道，方法名相同而参数列表不同的一组方法就是重载。在调用这种重载的方法时，通过传入不同的参数最后得到不同的结果。
+- **重写式多态**，也叫运行时多态。这种多态通过动态绑定（dynamic binding）技术来实现，是指在执行期间判断所引用对象的实际类型，根据其实际的类型调用其相应的方法。也就是说，只有程序运行起来，你才知道调用的是哪个子类的方法。 这种多态通过函数的重写以及向上转型来实现，我们上面代码中的例子就是一个完整的重写式多态。我们接下来讲的所有多态都是重写式多态，因为它才是面向对象编程中真正的多态。
+
+```java
+public static void main(String[] args) {
+        Animal animal = new Cat(); //向上转型
+        animal.eat();
+        animal = new Dog();
+        animal.eat();
+    }
+```
+
+
 
 # 参考资料
 

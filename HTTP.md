@@ -668,7 +668,7 @@ HTTPs 并不是新协议，而是让 HTTP 先和 SSL（Secure Sockets Layer）�
 
 ### 1. 对称密钥加密
 
-对称密钥加密（Symmetric-Key Encryption），加密和解密使用同一密钥。
+对称密钥加密（Symmetric-Key Encryption）， 。
 
 - 优点：运算速度快；
 - 缺点：无法安全地将密钥传输给通信方。
